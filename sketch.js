@@ -144,11 +144,13 @@ function draw(){
     textSize(30);
     text("Drag the Hexagon and release it towards the blocks",270,30);
 
-    keyPressed();
+    //keyPressed();
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(shootObj.polygon, {x: mouseX , y: mouseY});
+    if(slingshot.sling.bodyA === shootObj.polygon){
+       Matter.Body.setPosition(shootObj.polygon, {x: mouseX , y: mouseY});
+    }   
 }
 
 function mouseReleased(){
@@ -157,6 +159,7 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode === 32){ 
+       Matter.Body.setPosition(shootObj.polygon,{x:150,y:400});
        slingshot.attach(shootObj.polygon);
     }
 }
