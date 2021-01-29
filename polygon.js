@@ -12,6 +12,6 @@ class Polygon {
     display(){
         var pos = this.polygon.position;
         imageMode(CENTER);
-        image(this.image,pos.x,pos.y,40,40,this.polygon.radius,);
+        image(this.image,pos.x,pos.y,40,40);
     }
 }
